@@ -6,7 +6,26 @@ public class Agencia {
     private int numero;
     private Banco banco;
     private List<ContaIF> contas = new ArrayList<ContaIF>();
-
+    private List<Cliente> clientes = new ArrayList<Cliente>();
+    
+    public void cadastrarCliente(Cliente cliente) {
+        clientes.add(cliente);
+ 
+    }
+    
+public Cliente pesquisarClientePorCpf(int cpf) {
+        
+        for (Cliente cliente : clientes) {
+            
+            if (cliente.getCpf().equals) {
+                return cliente;
+            }
+        }
+        
+        throw new RuntimeException("Conta não encontrada: " + cpf);
+    }
+    
+    
     public void cadastrarConta(ContaIF conta) {
         contas.add(conta);
     }
